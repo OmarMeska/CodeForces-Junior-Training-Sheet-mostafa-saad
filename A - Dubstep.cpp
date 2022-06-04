@@ -5,18 +5,34 @@ int  freq[101]={0} ;
 
 int main()
 {
- int n ;
- cin >> n ; 
- map <string ,int > mp ;
- map <int ,string > mp2 ;
- int ma = 0; 
- while (n--)
+ string s ;
+ cin >> s ; 
+ int n = s.length() ; 
+ vector <string > stv ; string t ;
+
+ for (int i=0 ; i<n ; i++)
  {
-   string s ;
-   cin >>s ;
-   mp [s] ++ ;
- ma =max (mp[s],ma) ;
- mp2 [mp[s]] =s ;
+  
+    if (s[i] == 'W' and s[i+1] == 'U' and s[i+2] == 'B')
+     {  
+       if (t != "")
+       {
+
+       
+       stv .push_back (t) ;
+   
+   t ="" ;}
+   i +=2 ;
+    }
+    
+    else 
+    {
+      t+= s[i] ; 
+    }
+ }if (t!="")
+ {
+   stv .push_back (t) ;
  }
- cout << mp2 [ma]  << endl ;
-}
+ for (auto i :stv ) cout << i <<" " ;
+
+} 
