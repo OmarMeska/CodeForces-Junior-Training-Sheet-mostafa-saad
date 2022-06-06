@@ -25,16 +25,23 @@ int  freq[101]={0} ;
 
 int main()
 {
-int n ,m ;
-cin >>n >> m ;
-ll counter =0 ;
-for (int i=1 ;i<=n ; i++)
-{i%=5 ;
-    for (int j =1 ; j<=m ; j++)
-    {
-        j%=5  ;
-        if ((i +j ) %5 == 0) counter ++ ;
-    }
+map <string , int > mp ; 
+mp ["Tetrahedron"] =4 ;
+mp ["Cube"] =6 ; 
+mp ["Octahedron"]= 8 ;
+mp ["Dodecahedron"] =12 ;
+mp ["Icosahedron"] =20 ;;
+ll sum =0 ; 
+int n; 
+cin >> n; 
+while (n--)
+{
+  string s ;
+  cin >> s ;  
+  sum += mp [s] ; 
+
 }
-cout << counter  ;
+cout << sum ;
+
+
 } 

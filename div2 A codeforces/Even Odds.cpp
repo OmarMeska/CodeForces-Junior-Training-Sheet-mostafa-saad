@@ -2,6 +2,7 @@
 using namespace std;
 typedef long long ll ;
 int  freq[1000009]={0} ;
+//this is training for how can i get the changes i did in a file using git 
 
 int main()
 {
