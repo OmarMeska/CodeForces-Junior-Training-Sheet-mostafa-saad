@@ -25,23 +25,19 @@ int  freq[101]={0} ;
 
 int main()
 {
-map <string , int > mp ; 
-mp ["Tetrahedron"] =4 ;
-mp ["Cube"] =6 ; 
-mp ["Octahedron"]= 8 ;
-mp ["Dodecahedron"] =12 ;
-mp ["Icosahedron"] =20 ;;
-ll sum =0 ; 
-int n; 
-cin >> n; 
-while (n--)
+ll n ,m ;
+cin >>n >> m ;
+ll freq1 [7] ={0} ;
+ll freq2 [7] ={0} ;
+for (int i=1 ; i<=n ; i++)
 {
-  string s ;
-  cin >> s ;  
-  sum += mp [s] ; 
-
+    freq1[i%5] ++ ; 
 }
-cout << sum ;
-
+for (int i=1 ; i<=m ; i++)
+{
+    freq2[i%5] ++ ;
+}
+cout << (freq1[0]*freq2[0] +freq1[1]*freq2[4] + freq1[2]*freq2 [3 ] + freq1[3]*freq2[2] + freq1[4]*freq2 [1])
+;
 
 } 

@@ -25,23 +25,19 @@ int  freq[101]={0} ;
 
 int main()
 {
-map <string , int > mp ; 
-mp ["Tetrahedron"] =4 ;
-mp ["Cube"] =6 ; 
-mp ["Octahedron"]= 8 ;
-mp ["Dodecahedron"] =12 ;
-mp ["Icosahedron"] =20 ;;
-ll sum =0 ; 
-int n; 
-cin >> n; 
-while (n--)
+string s ,t ; 
+cin >> s >>t ;
+int con = s.find ('|') ;
+string left = s.substr(0,con) ;
+string right = s.substr(con+1) ;
+for (auto i:t)
 {
-  string s ;
-  cin >> s ;  
-  sum += mp [s] ; 
-
+    if (left.size() > right.size()) right +=i 
+    ; 
+    else
+    {
+        left += i;
+    }
 }
-cout << sum ;
-
-
+cout << (left.size()==right.size()  ? left+ '|' +right  : "Impossible") ;
 } 
